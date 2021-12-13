@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\ContactSeeder;
+use Database\Seeders\ContentSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            ContactSeeder::class,
+            ContentSeeder::class
+        ]);
     }
 }
