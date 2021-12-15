@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Database\Factories\ContentFactory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,8 +19,18 @@ class Content extends Model
     protected $fillable = [
         'title',
         'paragraph',
-        'img_link'
+        'img_url',
+        'updated_at'
     ];
 
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return Factory
+     */
+    protected static function newFactory(): Factory
+    {
+        return ContentFactory::new();
+    }
 
 }

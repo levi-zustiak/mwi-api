@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Content;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Content
+ */
+Route::apiResource('content', ContentController::class);
 
-Route::get('/', [Controller::class, 'index']);
+/**
+ * Contact
+ */
+Route::apiResource('contact', ContactController::class);
+
+// Route::get('content', function() {
+// 	return Content::all();
+// });
